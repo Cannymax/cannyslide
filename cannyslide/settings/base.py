@@ -32,7 +32,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'slide',
+    'rest_framework',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,7 +57,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            # os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'web'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -95,4 +102,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+
+    ("components", os.path.join(BASE_DIR, "bower_components")),
+    ("web", os.path.join(BASE_DIR, "web")),
 ]

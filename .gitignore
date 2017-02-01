@@ -122,6 +122,4 @@ Temporary Items
 migrations
 uploads
 
-db.sqlite3
-
-fabfile.py
+bower_components
