@@ -23,7 +23,7 @@ class FolderAdmin(admin.ModelAdmin):
 
 
 class SongAdmin(admin.ModelAdmin):
-    list_display = ('songid', 'title_1', 'shrink_lyrics')
+    list_display = ('songid', 'title_1', 'writer', 'shrink_lyrics')
 
     def shrink_lyrics(self, obj):
         return obj.lyrics[:30] + '...'
